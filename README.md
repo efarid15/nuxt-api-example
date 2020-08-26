@@ -1,6 +1,6 @@
-# dw-logistik-nuxt
+# Implemantation API Example
 
-> Aplikasi Ekspedisi Lumen Nuxt
+> Nuxt Implement API
 
 ## Build Setup
 
