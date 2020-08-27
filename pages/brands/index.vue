@@ -4,7 +4,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="card-title">Edit Brand</h4>
+                        <h4 class="card-title">Rename Palette Name</h4>
                     </div>
                     <div class="card-body">
                         <brand-form ref="form" />
