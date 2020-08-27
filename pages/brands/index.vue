@@ -19,6 +19,9 @@
                             List Palette
                         </h4>
                     </div>
+                    
+                    <!-- call the property from computed -->
+
                     <div class="card-body row">
                         <div class="col-md-12">
                             <span>Brand ID : {{ brand_id }}</span>
@@ -44,20 +47,28 @@
 </template>
 
 <script>
+
 import { mapActions, mapState, mapMutations } from 'vuex'
 import Brand from '@/components/form/Brand.vue'
+
 export default {
+
     async asyncData({store}) {
         await Promise.all([
             store.dispatch('brands/getPaletteData')
         ])
         return
     },
+
     data() {
         return {
+            /** you can manage state data from here too */
             arrItems: [],
         }
     },
+
+    /** Mapping palette state and create property for state data */
+
     computed: {
         ...mapState('brands', {
             palette: state => state.palette,
@@ -84,9 +95,13 @@ export default {
             return this.palette[0][0]['totalpalette']
         }
     },
+    
     components: {
         'brand-form': Brand
     },
+
+    /** Method for submit button */
+
     methods: {
         ...mapActions('brands', ['getPaletteData']),
         submit() {

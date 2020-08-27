@@ -35,6 +35,7 @@ export default {
   /*
   ** Plugins to load before mounting the App
   */
+ /** axios as a plugin */
   plugins: [
     '@/plugins/axios.js'
   ],
@@ -51,6 +52,9 @@ export default {
     '@nuxtjs/auth',
     'bootstrap-vue/nuxt'
   ],
+
+  /**  Using @nuxtjs/auth modules for user authentication */
+
   auth: {
     strategies: {
       local: {
@@ -64,12 +68,19 @@ export default {
       }
     }
   },
+
+  /** Base API URL */
+
   axios: {
     baseURL: 'https://staging-v4-api.offeo.com/v1/'
   },
+
+  /** Middleware for authentication routing page */
+
   router: {
     middleware: ['auth']
   },
+
   /*
   ** Build configuration
   */

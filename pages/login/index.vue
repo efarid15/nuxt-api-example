@@ -63,6 +63,9 @@ export default {
             this.$router.push('/')
         }
     },
+
+    /* Method for login using local strategy auth */
+
     methods: {
         ...mapMutations(['SET_IS_AUTH']),
         submit() {
